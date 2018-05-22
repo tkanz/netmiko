@@ -26,7 +26,6 @@ from netmiko.cisco import CiscoXrSSH, CiscoXrFileTransfer
 from netmiko.citrix import NetscalerSSH
 from netmiko.coriant import CoriantSSH
 from netmiko.dell import DellForce10SSH
-from netmiko.dell import DellOS10SSH, DellOS10FileTransfer
 from netmiko.dell import DellPowerConnectSSH
 from netmiko.dell import DellPowerConnectTelnet
 from netmiko.eltex import EltexSSH
@@ -36,7 +35,7 @@ from netmiko.extreme import ExtremeWingSSH
 from netmiko.extreme import ExtremeTelnet
 from netmiko.f5 import F5LtmSSH
 from netmiko.fortinet import FortinetSSH
-from netmiko.hp import HPProcurveSSH, HPComwareSSH, HPComwareTelnet
+from netmiko.hp import HPProcurveSSH, HPComwareSSH
 from netmiko.huawei import HuaweiSSH, HuaweiVrpv8SSH
 from netmiko.juniper import JuniperSSH, JuniperTelnet
 from netmiko.juniper import JuniperFileTransfer
@@ -54,7 +53,7 @@ from netmiko.terminal_server import TerminalServerSSH
 from netmiko.terminal_server import TerminalServerTelnet
 from netmiko.ubiquiti import UbiquitiEdgeSSH
 from netmiko.vyos import VyOSSSH
-
+from netmiko.allied import AlliedSSH
 
 # The keys of this dictionary are the supported device_types
 CLASS_MAPPER_BASE = {
@@ -84,7 +83,6 @@ CLASS_MAPPER_BASE = {
     'cisco_xr': CiscoXrSSH,
     'coriant': CoriantSSH,
     'dell_force10': DellForce10SSH,
-    'dell_os10': DellOS10SSH,
     'dell_powerconnect': DellPowerConnectSSH,
     'eltex': EltexSSH,
     'enterasys': EnterasysSSH,
@@ -113,13 +111,13 @@ CLASS_MAPPER_BASE = {
     'ubiquiti_edgeswitch': UbiquitiEdgeSSH,
     'vyatta_vyos': VyOSSSH,
     'vyos': VyOSSSH,
+	'allied_awp': AlliedSSH
 }
 
 FILE_TRANSFER_MAP = {
     'arista_eos': AristaFileTransfer,
     'cisco_asa': CiscoAsaFileTransfer,
     'cisco_ios': CiscoIosFileTransfer,
-    'dell_os10': DellOS10FileTransfer,
     'cisco_nxos': CiscoNxosFileTransfer,
     'cisco_xe': CiscoIosFileTransfer,
     'cisco_xr': CiscoXrFileTransfer,
@@ -147,7 +145,6 @@ CLASS_MAPPER['brocade_fastiron_telnet'] = RuckusFastironTelnet
 CLASS_MAPPER['brocade_netiron_telnet'] = BrocadeNetironTelnet
 CLASS_MAPPER['cisco_ios_telnet'] = CiscoIosTelnet
 CLASS_MAPPER['arista_eos_telnet'] = AristaTelnet
-CLASS_MAPPER['hp_comware_telnet'] = HPComwareTelnet
 CLASS_MAPPER['juniper_junos_telnet'] = JuniperTelnet
 CLASS_MAPPER['calix_b6_telnet'] = CalixB6Telnet
 CLASS_MAPPER['dell_powerconnect_telnet'] = DellPowerConnectTelnet
