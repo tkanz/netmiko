@@ -53,7 +53,7 @@ from netmiko.terminal_server import TerminalServerSSH
 from netmiko.terminal_server import TerminalServerTelnet
 from netmiko.ubiquiti import UbiquitiEdgeSSH
 from netmiko.vyos import VyOSSSH
-from netmiko.allied import AlliedSSH
+from netmiko.allied import AlliedSSH, AlliedFileTransfer
 
 # The keys of this dictionary are the supported device_types
 CLASS_MAPPER_BASE = {
@@ -123,6 +123,7 @@ FILE_TRANSFER_MAP = {
     'cisco_xr': CiscoXrFileTransfer,
     'juniper_junos': JuniperFileTransfer,
     'linux': LinuxFileTransfer,
+    'allied_awp': AlliedFileTransfer,
 }
 
 # Also support keys that end in _ssh
